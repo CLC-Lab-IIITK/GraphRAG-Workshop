@@ -1,4 +1,3 @@
-
 # GraphRAG Workshop
 ### Connecting Knowledge Graphs with Large Language Models
 
@@ -85,5 +84,55 @@ The graph database is hosted using Neo4j AuraDB.
 
 Participants who wish to run the notebooks independently should:
 
-1. Create
+1. Create a Neo4j AuraDB instance.
+2. Note the connection URI, username, password, and database name.
+3. Enter the credentials securely when prompted by the notebook.
 
+**Do not share your Neo4j credentials or commit them to GitHub.**
+
+### Step 4: Run the Notebooks
+
+Run the notebook cells sequentially.
+
+The notebooks demonstrate the process of constructing a Knowledge Graph, exploring graph relationships, and connecting the graph to an LLM for question answering.
+
+## Suggested Learning Path
+
+1. Review the workshop slides.
+2. Explore the basic concepts of Knowledge Graphs.
+3. Construct a Knowledge Graph from structured data.
+4. Explore the graph using Cypher queries.
+5. Extract entities and relationships from unstructured text.
+6. Connect the Knowledge Graph with an LLM.
+7. Experiment with natural-language questions and prompt engineering.
+
+## Important Notes
+
+This repository contains educational demonstrations intended for learning and experimentation.
+
+- LLM-generated entities and relationships may require verification.
+- Generated Cypher queries may be syntactically or logically incorrect.
+- The quality of responses depends on the model, prompt, graph schema, and available knowledge.
+- Always verify generated queries and answers before relying on them.
+- The notebooks demonstrate a simplified graph-based RAG workflow and are not intended as production-ready systems.
+
+Participants are encouraged to improve the prompts, experiment with different models, and explore alternative graph retrieval strategies.
+
+## Further Reading
+
+- [Neo4j GraphAcademy](https://graphacademy.neo4j.com/)
+- [Neo4j GraphRAG Documentation](https://neo4j.com/docs/neo4j-graphrag-python/current/)
+- [Neo4j Cypher Manual](https://neo4j.com/docs/cypher-manual/current/)
+- [Hugging Face Transformers](https://huggingface.co/docs/transformers/index)
+
+## Acknowledgement
+
+This workshop is organized by the **CLC Lab, Department of Computer Science and Engineering, IIIT Kottayam**.
+
+For more information about the lab and its activities, visit:
+
+[CLC Lab – IIIT Kottayam](https://clc.iiitkottayam.ac.in/)
+
+---
+
+*Learn to represent knowledge, explore relationships, and connect graphs with LLMs.*
