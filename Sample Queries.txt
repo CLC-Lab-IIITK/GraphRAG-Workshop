@@ -1,0 +1,44 @@
+Query 1: View all node types and their counts
+MATCH (n)
+UNWIND labels(n) AS label
+RETURN label, count(*) AS count
+ORDER BY count DESC
+
+Query 2: View all relationship types
+MATCH ()-[r]->()
+RETURN type(r) AS relationship, count(*) AS count
+ORDER BY count DESC
+
+Query 3: Display a sample of the graph
+MATCH (n)-[r]->(m)
+RETURN n, r, m
+LIMIT 50
+
+Query 4: List all faculty members
+MATCH (f:Faculty)
+RETURN f.name AS Faculty
+ORDER BY Faculty
+
+Query 5: Find faculty members and their departments
+MATCH (f:Faculty)-[:WORKS_IN]->(d:Department)
+RETURN f.name AS Faculty,
+       d.name AS Department
+
+Query 6: Find courses taught by each faculty member
+MATCH (f:Faculty)-[:TEACHES]->(c:Course)
+RETURN f.name AS Faculty,
+       collect(c.name) AS Courses
+
+Query 7: Find faculty members working on research areas associated with healthcare
+MATCH (f:Faculty)-[:RESEARCHES]->(r:ResearchArea)
+      -[:APPLIED_IN]->(a:Application)
+WHERE toLower(a.name) CONTAINS 'health'
+RETURN DISTINCT f.name, r.name, a.name
+
+Query 8: Find faculty members, their research areas, and associated applications
+MATCH (f:Faculty)-[:RESEARCHES]->(r:ResearchArea)
+      -[:APPLIED_IN]->(a:Application)
+RETURN f.name AS Faculty,
+       r.name AS ResearchArea,
+       a.name AS Application
+   
